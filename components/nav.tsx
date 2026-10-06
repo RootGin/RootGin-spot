@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const LEFT = [
   { href: "/now/", label: "now" },
-  { href: "/misc/", label: "misc" },
+  { href: "/uses/", label: "uses" },
 ];
 const RIGHT = [{ href: "/build/", label: "build" }];
 

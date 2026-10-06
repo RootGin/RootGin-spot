@@ -111,15 +111,15 @@ export default function Home() {
           />
           <ExploreCard
             num="03"
-            title="misc"
-            desc="Non‑tech creative stuff — translations, writing, and detours."
-            href="/misc/"
+            title="uses"
+            desc="Hardware, distro, editor, and the tools I run it with."
+            href="/uses/"
             delay={0.16}
             icon={
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" {...ICON} aria-hidden>
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
+                <rect x="2" y="4" width="20" height="13" rx="2" />
+                <line x1="2" y1="20" x2="22" y2="20" />
+                <line x1="6" y1="8" x2="10" y2="8" />
               </svg>
             }
           />

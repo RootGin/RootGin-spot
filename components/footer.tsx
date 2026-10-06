@@ -19,7 +19,7 @@ export function Footer() {
             <div className="footer-explore-links">
               <Link href="/build/">build</Link>
               <Link href="/now/">now</Link>
-              <Link href="/misc/">misc</Link>
+              <Link href="/uses/">uses</Link>
             </div>
           </div>
         </div>

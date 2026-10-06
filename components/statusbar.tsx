@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 
 /** Extra right-hand status shown per page, matching the original littlelink pages. */
 const NOTES: Record<string, string> = {
-  "/build/": "3 projects",
-  "/misc/": "1 entry",
+  "/build/": "4 projects",
+  "/uses/": "4 sections",
 };
 
 export function Statusbar() {
