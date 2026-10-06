@@ -47,7 +47,7 @@ export default function BuildPage() {
         </div>
         <p className="project-desc">This site. Terminal aesthetic, statically exported Next.js.</p>
         <a
-          href="https://github.com/RootGin/littlelink"
+          href="https://github.com/RootGin/RootGin-spot"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-github"
