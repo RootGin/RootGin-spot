@@ -99,9 +99,9 @@ export default function UsesPage() {
       <BackLink />
 
       <div className="build-header">
-        <p className="build-header-label">~/uses</p>
+        <p className="build-header-label">/uses</p>
         <h1 className="build-title">
-          things_i_use<span className="c-accent">()</span>
+          Things I Use
         </h1>
         <p className="build-desc">
           Hardware I run on and software I run it with. Everything except the laptop is declared in my NixOS

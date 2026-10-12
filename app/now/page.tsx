@@ -29,7 +29,7 @@ const SECTIONS = [
     items: [
       {
         title: "This portfolio",
-        desc: "rootgin.vercel.app — iterating on the terminal aesthetic, adding pages, keeping it minimal.",
+        desc: "rootgin.vercel.app — redesigning the brutalist look, adding pages, keeping it minimal.",
       },
       {
         title: "Self-hosted Minecraft server",
@@ -65,11 +65,11 @@ export default function NowPage() {
   return (
     <main className="page">
       <BackLink />
-      <PageHeader label="~/now" title="currently" desc="What I'm focused on right now." />
+      <PageHeader label="/now" title="Currently" desc="What I'm focused on right now." />
 
       {SECTIONS.map(({ head, items }) => (
         <section className="now-section" key={head}>
-          <h2 className="now-section-head">## {head}</h2>
+          <h2 className="now-section-head">{head}</h2>
           <div className="now-items">
             {items.map((item) => (
               <div className="now-item" key={item.title}>

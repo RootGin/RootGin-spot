@@ -6,21 +6,31 @@ import { DiscordCard } from "@/components/discord-card";
 
 const ICON = { width: 22, height: 22 };
 
+const TICKER = [
+  { label: "nixos", href: "https://nixos.org" },
+  { label: "niri", href: "https://github.com/Yaahc/niri" },
+  { label: "neovim", href: "https://github.com/neovim/neovim" },
+  { label: "wayland", href: "https://wayland.freedesktop.org" },
+  { label: "eww", href: "https://github.com/elkowar/eww" },
+  { label: "podman", href: "https://github.com/containers/podman" },
+  { label: "self-hosted", href: "https://en.wikipedia.org/wiki/Self-hosting" },
+  { label: "tea", href: "https://en.wikipedia.org/wiki/Tea" },
+];
+
 export default function Home() {
   return (
     <main id="main-content">
       <section id="hero">
         <div className="hero-bg-grid" />
-        <div className="hero-glow" />
         <div className="hero-content">
-          <pre className="hero-banner">╭── rootgin ────────────────────╮</pre>
+          <p className="hero-eyebrow">rootgin / portfolio</p>
           <EasterEgg />
           <h1 className="hero-name">
             Gin<span className="c-cursor" />
           </h1>
           <p className="hero-sub">
-            just someone who likes building things for the web. terminal enthusiast, tea addict, occasional
-            rabbit-hole explorer.
+            <span className="hero-serif">Just someone who likes building things for the web.</span> Terminal
+            enthusiast, tea addict, occasional rabbit-hole explorer.
           </p>
           <div className="hero-ctas">
             <Link href="/build/" className="btn-primary">
@@ -40,8 +50,29 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="marquee">
+        <div className="marquee-track">
+          {[0, 1].map((copy) => (
+            <div className="marquee-half" key={copy} aria-hidden={copy === 1}>
+              {TICKER.map(({ label, href }) => (
+                <a
+                  className="marquee-item"
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabIndex={copy === 1 ? -1 : undefined}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       <section id="about">
-        <SectionHeader label="01 — about" title="who_am_i" />
+        <SectionHeader label="01 / about" title="Who I Am" />
         <div className="about-grid">
           <div className="about-photo-box">
             <DiscordCard />
@@ -62,7 +93,7 @@ export default function Home() {
       </section>
 
       <section id="links">
-        <SectionHeader label="02 — links" title="find_me_online" />
+        <SectionHeader label="02 / links" title="Find Me Online" />
         <div className="links-grid">
           <a href="https://github.com/RootGin" className="link-btn" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden>
@@ -81,7 +112,7 @@ export default function Home() {
       </section>
 
       <section id="explore">
-        <SectionHeader label="03 — explore" title="continue_to_explore" />
+        <SectionHeader label="03 / explore" title="Continue Exploring" />
         <div className="explore-grid">
           <ExploreCard
             num="01"

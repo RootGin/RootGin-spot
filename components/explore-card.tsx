@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 
-/** Staggered scroll-in reveal, ported from littlelink's IntersectionObserver in main.js. */
 export function ExploreCard({
   num,
   title,

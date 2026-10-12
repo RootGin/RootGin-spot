@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const LEFT = [
   { href: "/now/", label: "now" },
   { href: "/uses/", label: "uses" },
+  { href: "/build/", label: "build" },
 ];
-const RIGHT = [{ href: "/build/", label: "build" }];
+
+const CTA = { href: "/#links", label: "say hi" };
 
 export function Nav() {
   const pathname = usePathname();
@@ -15,30 +18,22 @@ export function Nav() {
   return (
     <header>
       <nav>
-        <div className="nav-left">
-          <Link className="nav-logo" href="/">
-            Gin
-          </Link>
-          <ul className="nav-left-links">
-            {LEFT.map(({ href, label }) => (
-              <li key={href}>
-                <Link href={href} className={pathname.startsWith(href) ? "nav-active" : undefined}>
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="nav-center" />
-        <ul className="nav-right">
-          {RIGHT.map(({ href, label }) => (
+        <Link className="nav-logo" href="/">
+          <img src="/icon.svg" alt="Gin" width={28} height={28} />
+        </Link>
+        <ul className="nav-links">
+          {LEFT.map(({ href, label }) => (
             <li key={href}>
-              <Link href={href} className={pathname.startsWith(href) ? "nav-active" : undefined}>
-                {label}
+              <Link href={href}>
+                <span className={pathname.startsWith(href) ? "nav-active" : undefined}>{label}</span>
               </Link>
             </li>
           ))}
         </ul>
+        <ThemeToggle />
+        <a className="nav-cta" href={CTA.href}>
+          {CTA.label}
+        </a>
       </nav>
     </header>
   );

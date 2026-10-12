@@ -1,15 +1,28 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Archivo, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Statusbar } from "@/components/statusbar";
 import { Footer } from "@/components/footer";
 
-const mono = JetBrains_Mono({
+const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-jetbrains-mono",
+  axes: ["wdth"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+const mono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+});
+
+const serif = Instrument_Serif({
+  subsets: ["latin"],
+  style: ["italic"],
+  weight: "400",
+  variable: "--font-instrument-serif",
   display: "swap",
 });
 
@@ -32,13 +45,18 @@ export const metadata: Metadata = {
   icons: { icon: "/icon.svg" },
 };
 
+const THEME_SCRIPT = `try{var t=localStorage.theme;if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t}catch(e){}`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={mono.variable}>
+    <html lang="en" className={`${archivo.variable} ${mono.variable} ${serif.variable}`} data-theme="dark">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body>
-        <Statusbar />
         <Nav />
         {children}
+        <Statusbar />
         <Footer />
       </body>
     </html>

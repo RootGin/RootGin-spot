@@ -12,9 +12,9 @@ export default function BuildPage() {
       <BackLink />
 
       <div className="build-header">
-        <p className="build-header-label">~/build</p>
+        <p className="build-header-label">/build</p>
         <h1 className="build-title">
-          things_i_build<span className="c-accent">()</span>
+          Things I Build
         </h1>
         <p className="build-desc">
           Stuff I build, configure, and tinker with. Dotfiles, widget shells, self-hosted services.
@@ -45,7 +45,7 @@ export default function BuildPage() {
           <span className="project-num">02</span>
           <span className="project-name">Portfolio Website</span>
         </div>
-        <p className="project-desc">This site. Terminal aesthetic, statically exported Next.js.</p>
+        <p className="project-desc">This site. Brutalist dark, statically exported Next.js.</p>
         <a
           href="https://github.com/RootGin/RootGin-spot"
           target="_blank"
