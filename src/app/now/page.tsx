@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BackLink, PageHeader } from "@/components/chrome";
+import { BackLink, PageHeader } from "@/components/ui/chrome";
 
 export const metadata: Metadata = {
   title: "now",

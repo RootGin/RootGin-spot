@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BackLink } from "@/components/chrome";
+import { BackLink } from "@/components/ui/chrome";
 
 export const metadata: Metadata = {
   title: "uses",

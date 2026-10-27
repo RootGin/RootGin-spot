@@ -149,7 +149,7 @@ h3 {
 .hero-socials,
 .section-label,
 .now-header-label,
-.build-header-label,
+.projects-header-label,
 .detail-label,
 .explore-num,
 .explore-link,
@@ -163,7 +163,7 @@ h3 {
 .hud-label,
 .section-label,
 .now-header-label,
-.build-header-label,
+.projects-header-label,
 .hero-eyebrow {
   font-size: 0.6875rem;
   font-weight: 500;
@@ -554,10 +554,6 @@ header > nav .nav-cta {
   padding-right: 3rem;
 }
 
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
 .marquee-item {
   font-family: var(--mono);
   font-size: 0.75rem;
@@ -867,25 +863,25 @@ main:not(.page) > section:has(> .section-header) > .section-header ~ * {
 }
 
 .now-header,
-.build-header {
+.projects-header {
   padding-bottom: 3rem;
   margin-bottom: 3.5rem;
   border-bottom: 1px solid var(--hairline);
 }
 
 .now-header-label,
-.build-header-label {
+.projects-header-label {
   margin: 0 0 0.75rem;
 }
 
 .now-title,
-.build-title {
+.projects-title {
   font-size: clamp(2.5rem, 7vw, 4rem);
   margin-bottom: 1rem;
 }
 
 .now-desc,
-.build-desc {
+.projects-desc {
   max-width: 38rem;
   margin: 0;
   color: var(--fg-dim);
@@ -893,12 +889,27 @@ main:not(.page) > section:has(> .section-header) > .section-header ~ * {
 
 /* ---------- build / uses entries ---------- */
 
-.build-project {
+.project-entry {
   padding: 2rem 0;
   border-bottom: 1px solid var(--hairline);
 }
 
-.build-project:last-child {
+.project-name {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.project-name:hover {
+  color: var(--accent);
+}
+
+.build-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 0.5rem;
+}
+
+.project-entry:last-child {
   border-bottom: none;
 }
 

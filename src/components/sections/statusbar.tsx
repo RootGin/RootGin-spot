@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 
 const NOTES: Record<string, string> = {
-  "/build/": "4 projects",
+  "/projects/": "4 projects",
   "/uses/": "4 sections",
 };
 

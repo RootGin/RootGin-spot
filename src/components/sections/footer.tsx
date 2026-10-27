@@ -17,8 +17,9 @@ export function Footer() {
           <div className="footer-col">
             <span className="footer-col-label">explore</span>
             <div className="footer-explore-links">
-              <Link href="/build/">build</Link>
+              <Link href="/projects/">projects</Link>
               <Link href="/now/">now</Link>
+              <Link href="/about/">about</Link>
               <Link href="/uses/">uses</Link>
             </div>
           </div>

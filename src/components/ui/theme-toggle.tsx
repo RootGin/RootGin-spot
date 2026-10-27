@@ -1,25 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useTheme } from "@/hooks";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
-
-  useEffect(() => {
-    setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
-  }, []);
+  const { theme, toggle } = useTheme();
 
   return (
     <button
       type="button"
       className="theme-toggle"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-      onClick={() => {
-        const next = theme === "dark" ? "light" : "dark";
-        setTheme(next);
-        document.documentElement.dataset.theme = next;
-        localStorage.theme = next;
-      }}
+      onClick={toggle}
     >
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
         <path className="icon-moon" d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" />

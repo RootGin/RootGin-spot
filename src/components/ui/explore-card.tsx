@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import type { ReactNode } from "react";
+import { useReveal } from "@/hooks";
 
 export function ExploreCard({
   num,
@@ -17,25 +18,7 @@ export function ExploreCard({
   icon: ReactNode;
   delay?: number;
 }) {
-  const ref = useRef<HTMLAnchorElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (!e.isIntersecting) continue;
-          el.style.opacity = "1";
-          el.style.transform = "translateY(0)";
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.07 },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const { ref, revealed } = useReveal<HTMLAnchorElement>();
 
   return (
     <a
@@ -43,8 +26,8 @@ export function ExploreCard({
       href={href}
       className="explore-card"
       style={{
-        opacity: 0,
-        transform: "translateY(10px)",
+        opacity: revealed ? 1 : 0,
+        transform: revealed ? "translateY(0)" : "translateY(10px)",
         transition: `opacity 0.4s ${delay}s ease, transform 0.4s ${delay}s ease`,
       }}
     >
